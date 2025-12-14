@@ -3,10 +3,11 @@ console.log("Trying to load CSV...");
 // --------------------------
 // LOAD DATA
 // --------------------------
-d3.csv("data/online_shoppers_d3.csv").then(data => {
+d3.csv("data/processed/online_shoppers_d3.csv").then(data => {
     console.log("CSV loaded!", data.slice(0, 5));
 
-    // Convert & clean data
+
+    // Convert &clean data
     data.forEach(d => {
         d.ProductRelated = +d.ProductRelated;
         d.PageValues = +d.PageValues;
@@ -226,7 +227,7 @@ function initWeekendFilter(data) {
 
 // Apply all filters
 function applyFilters() {
-    d3.csv("../data/processed/online_shoppers_d3.csv").then(data => {
+    d3.csv("/data/processed/online_shoppers_d3.csv").then(data => {
         data.forEach(d => {
             d.ProductRelated = +d.ProductRelated;
             d.PageValues = +d.PageValues;
