@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#controls label {
+  font-weight: bold;
+}
+
+#controls select {
+  padding: 4px;
+}
+
+#charts {
+  display: flex;
+  gap: 40px;
+}
+
+svg {
+  border: 1px solid #ddd;
+}

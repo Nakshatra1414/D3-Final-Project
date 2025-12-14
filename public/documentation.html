@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shopper Behavior Analysis - Documentation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        img {
+            max-width: 100%;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        #back-link {
+            margin-top: 30px;
+        }
+        a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Shopper Behavior Analysis - Documentation</h1>
+
+    <h2>1. Project Overview</h2>
+    <p>The goal of this project was to design and implement an interactive data visualization using <strong>D3.js</strong> that enables meaningful exploration of a real-world dataset. 
+    The visualization analyzes online shopper behavior based on visitor type, time period, and browsing behavior, emphasizing the full visualization pipeline: data loading, cleaning, transformation, visual encoding, and interaction design.</p>
+
+    <h2>2. Dataset Description</h2>
+    <p>Source: <strong>Kaggle - Online Shoppers Purchasing Intention Dataset</strong></p>
+    <p>The dataset contains session-level e-commerce data including numerical and categorical attributes. Key attributes used in the visualization:</p>
+    <ul>
+        <li>Month – Month of the visit</li>
+        <li>VisitorType – New Visitor, Returning Visitor, or Other</li>
+        <li>Weekend – Whether the visit occurred on a weekend</li>
+        <li>Revenue – Whether the session resulted in a purchase</li>
+        <li>ProductRelated – Number of product-related pages viewed</li>
+        <li>PageValues – Estimated value of visited pages</li>
+        <li>BounceRates</li>
+        <li>ExitRates</li>
+        <li>TrafficType</li>
+    </ul>
+
+    <h3>Dataset Preview</h3>
+    
+
+    <h2>3. Design Process</h2>
+    <p>Initial sketches explored bar charts, line charts, and flow diagrams. Questions guiding the design included:</p>
+    <ul>
+        <li>How does behavior differ between new and returning visitors?</li>
+        <li>Do weekends influence purchasing behavior?</li>
+        <li>Is there a relationship between product exploration and page value?</li>
+        <li>How do different user paths lead to revenue or no revenue?</li>
+    </ul>
+    <p>The final design uses a multi-view approach:</p>
+    <ul>
+        <li><strong>Sankey diagram</strong> – to represent user flow</li>
+        <li><strong>Scatterplot</strong> – to analyze behavioral relationships</li>
+    </ul>
+    
+
+    <h2>4. Final Visualization Design</h2>
+
+    <h3>A. Sankey Diagram – User Flow Visualization</h3>
+    <p><strong>Purpose:</strong> Visualizes how users move through stages: Visitor Type → Month → Weekend/Weekday → Revenue Outcome</p>
+    <p><strong>Design Choices:</strong></p>
+    <ul>
+        <li>Nodes represent categorical stages</li>
+        <li>Link width represents the number of sessions</li>
+        <li>Consistent color palette for readability</li>
+        <li>Clear text labels for all nodes</li>
+    </ul>
+    
+
+    <h3>B. Scatterplot – Page Values vs Product-Related Pages</h3>
+    <p><strong>Purpose:</strong> Explores the relationship between ProductRelated pages (x-axis) and PageValues (y-axis), with color encoding for Revenue vs No Revenue.</p>
+    <ul>
+        <li>X-axis: Product-Related Pages Viewed</li>
+        <li>Y-axis: Page Value</li>
+        <li>Color encoding: Green → Revenue, Red → No Revenue</li>
+        <li>Semi-transparent points to reduce overplotting</li>
+    </ul>
+    
+
+    <h2>5. Interactivity & Filters</h2>
+    <p>Three filters dynamically update both visualizations:</p>
+    <ul>
+        <li>Month</li>
+        <li>Visitor Type</li>
+        <li>Weekend</li>
+    </ul>
+    <p>Filters allow users to isolate specific behaviors (e.g., weekend returning visitors) and encourage exploration and hypothesis testing.</p>
+    
+
+    <h2>6. Findings & Insights</h2>
+    <ul>
+        <li>Returning visitors dominate traffic but most do not purchase.</li>
+        <li>Weekend sessions show higher revenue proportion.</li>
+        <li>PageValues strongly correlates with revenue.</li>
+        <li>Many users browse extensively without purchasing, indicating potential usability or pricing barriers.</li>
+    </ul>
+    
+
+    <h2>7. Technical Implementation</h2>
+    <ul>
+        <li>Built entirely using <strong>D3.js (v7)</strong></li>
+        <li>Data loaded and parsed using <code>d3.csv()</code></li>
+        <li>Scales and axes implemented using D3 modules</li>
+        <li>Sankey layout implemented using <code>d3-sankey</code></li>
+        <li>Modular JavaScript functions for maintainability</li>
+        <li>Compatible with Google Chrome</li>
+    </ul>
+
+    <h2>8. Video Demonstration</h2>
+    <p>Watch the interactive demo of the visualization:</p>
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/N0E9xV_BnY8" 
+        title="YouTube video demo" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+    <h2>9. Conclusion</h2>
+    <p>This project successfully meets all requirements by:</p>
+    <ul>
+        <li>Using a real-world dataset with appropriate attributes</li>
+        <li>Applying sound visualization design principles</li>
+        <li>Implementing multiple interactive D3 visualizations</li>
+        <li>Supporting meaningful data exploration and insight discovery</li>
+    </ul>
+
+    <div id="back-link">
+        <a href="index.html">Back to Visualization</a>
+    </div>
+</body>
+</html>

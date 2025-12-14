@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shopper Behavior Analysis</title>
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Online Shopper Behavior Analysis</h1>
+
+    <!-- Filters -->
+    <div id="controls">
+        <label>Month:</label>
+        <select id="month-filter"></select>
+
+        <label>Visitor Type:</label>
+        <select id="visitor-filter"></select>
+
+        <label>Weekend:</label>
+        <select id="weekend-filter"></select>
+    </div>
+
+    <!-- Charts -->
+    <div id="charts">
+        <div id="sankey-container">
+            <h2>User Flow (Sankey)</h2>
+            <svg id="sankey" width="700" height="400"></svg>
+        </div>
+
+        <div id="scatter-container">
+            <h2>Page Values vs Product Related</h2>
+            <svg id="scatterplot" width="700" height="400"></svg>
+        </div>
+    </div>
+
+    <!-- Link to Documentation -->
+    <div id="doc-link">
+        <a href="documentation.html" target="_blank">View Documentation & YouTube Demo</a>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
